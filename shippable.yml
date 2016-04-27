@@ -4,9 +4,8 @@ version:
   - 0.12
 
 build:
-  pre_ci:
-    - npm install -g mocha
   ci:
+    - npm install -g mocha
     - npm install
     - npm run unit-tests
     - npm start &
