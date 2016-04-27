@@ -1,0 +1,22 @@
+language: node_js
+
+version:
+  - 0.12
+
+build:
+  pre_ci:
+    - npm install -g mocha
+  ci:
+    - npm install
+    - npm run unit-tests
+    - npm start &
+    - npm run api-tests
+
+  post_ci:
+    - docker build -t scriptnull/sample_node_ddc:$BRANCH.$BUILD_NUMBER .
+    - docker push scriptnull/sample_node_ddc:$BRANCH.$BUILD_NUMBER
+
+integrations:
+  hub:
+    - integrationName : "Docker prod"
+      type : docker
