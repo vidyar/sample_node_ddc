@@ -17,5 +17,5 @@ build:
 
 integrations:
   hub:
-    - integrationName : "Docker prod"
+    - integrationName : "ship-ddc"
       type : docker
