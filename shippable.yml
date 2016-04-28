@@ -8,8 +8,8 @@ build:
     - echo "build"
     
   post_ci:
-    - docker build -t shippabledocker/sample_node_ddc:$BRANCH.$BUILD_NUMBER .
-    - docker push shippabledocker/sample_node_ddc:$BRANCH.$BUILD_NUMBER
+    - docker build -t shippabledocker/sample-node-ddc:$BRANCH.$BUILD_NUMBER .
+    - docker push shippabledocker/sample-node-ddc:$BRANCH.$BUILD_NUMBER
 
 integrations:
   hub:
