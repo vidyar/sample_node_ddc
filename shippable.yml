@@ -5,12 +5,8 @@ version:
 
 build:
   ci:
-    - npm install -g mocha
-    - npm install
-    - npm run unit-tests
-    - npm start &
-    - npm run api-tests
-
+    - echo "build"
+    
   post_ci:
     - docker build -t shippabledocker/sample_node_ddc:$BRANCH.$BUILD_NUMBER .
     - docker push shippabledocker/sample_node_ddc:$BRANCH.$BUILD_NUMBER
