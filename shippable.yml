@@ -12,10 +12,10 @@ build:
     - npm run api-tests
 
   post_ci:
-    - docker build -t scriptnull/sample_node_ddc:$BRANCH.$BUILD_NUMBER .
-    - docker push scriptnull/sample_node_ddc:$BRANCH.$BUILD_NUMBER
+    - docker build -t shippabledocker/sample_node_ddc:$BRANCH.$BUILD_NUMBER .
+    - docker push shippabledocker/sample_node_ddc:$BRANCH.$BUILD_NUMBER
 
 integrations:
   hub:
-    - integrationName : "ship-ddc"
+    - integrationName : "ship-docker"
       type : docker
